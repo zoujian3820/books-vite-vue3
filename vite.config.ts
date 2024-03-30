@@ -4,7 +4,7 @@ import { defineConfig, CommonServerOptions } from 'vite'
 import fs from 'fs'
 import dotenv, { DotenvParseOutput } from 'dotenv'
 // import path from "path"
-// import { toNumber } from "@/utils/stringUtil"
+// import { toNumber } from './src/utils/stringUtil'
 
 // https://vitejs.dev/config/
 // export default defineConfig({
@@ -32,20 +32,20 @@ export default defineConfig(({ mode }) => {
       port: Number(envMap.VITE_PORT),
       proxy: {
         [envMap.VITE_BASE_URL]: {
-          target: envMap.VITE_PROXY_DOMAIN
-        }
-      }
+          target: envMap.VITE_PROXY_DOMAIN,
+        },
+      },
     }
     console.log(`我是${mode}开发环境`, server)
   } else if (mode === 'production') {
     server = {
       host: envMap.VITE_HOST,
-      port: Number(envMap.VITE_PORT)
+      port: Number(envMap.VITE_PORT),
     }
     console.log(`我是${mode}生产环境`, server)
   }
   return {
     plugins: [vue()],
-    server
+    server,
   }
 })
