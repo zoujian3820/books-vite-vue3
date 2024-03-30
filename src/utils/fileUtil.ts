@@ -1,16 +1,16 @@
-// class Customer {
-//   name = 100
-//   bar!: string
-//   eat() {
-//     console.log('eat:')
-//   }
-// }
+export class Customer {
+  name = 100
+  bar!: string
+  eat() {
+    console.log('eat:')
+  }
+}
 
 // const s = new Set()
 
-// interface Door {
-//   name: string
-// }
+interface Door {
+  name: string
+}
 
-// export  type {Door}
-// //const x:number=null;
+export type { Door }
+//const x:number=null;
